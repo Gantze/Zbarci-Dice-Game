@@ -1,0 +1,381 @@
+* {
+    box-sizing: border-box;
+}
+
+.not-displayed {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 8px;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 8px;
+    background-clip: padding-box; 
+    border: 3px solid transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
+/* Start game section */
+
+body {
+    font-family: 'Tsukimi Rounded', sans-serif;
+    background-image: url('../images/table_md.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+#game-initialization {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 80px;
+    margin-top: 250px;
+    font-weight: 700;
+    text-shadow: 3px 3px 10px black;
+    color: rgb(102, 21, 21);
+}
+
+#start-game-box {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#start-game-box div {
+    height: 22px;
+}
+
+@keyframes grow {
+    from {font-size: 16px;}
+    to {font-size: 22px;}
+}
+
+#start-game-box p {
+    font-weight: bold; 
+    animation-name: grow;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#start-game-box button {
+    opacity: 0.85;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 5px 15px;
+    border: none;
+    background-color: rgb(175, 175, 175);
+}
+
+#start-game-box button:hover {
+    background-color: gray;
+    color: white;
+}
+
+
+/* Add players section */
+
+#add-players-box {
+    display: flex;
+    justify-content: center;
+}
+
+#add-players-box > div:first-child {
+    margin-top: 180px;
+}
+
+#add-players-box h2 {
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+}
+
+#add-player {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+#add-player input {
+    border-bottom: 2px solid black;
+    background: transparent;
+    width: 170px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#add-player button {
+    opacity: 0.8;
+    border: none;
+    background-color: rgb(175, 175, 175);
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+#add-player button:hover {
+    background-color: gray;
+    color: white;
+}
+
+#error-box {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    color: rgb(167, 19, 19);
+    font-weight: bold;
+}
+
+.fa-circle-exclamation {
+    margin-right: 2px;
+}
+
+#play-button-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#play-button-box button {
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 6px 24px;
+    opacity: 0.85;
+    border: none;
+    background-color: rgb(175, 175, 175);
+}
+
+#play-button-box button:hover {
+    background-color: gray;
+    color: white;
+}
+
+#created-players {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+@keyframes rotate {
+    from {transform: rotate(-20deg);}
+    to {transform: rotate(20deg);}
+}
+
+#created-players p {
+    font-size: 30px;
+    font-weight: bold;
+    animation-name: rotate;
+    animation-duration: 1.1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#created-players > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#created-players button {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.fa-trash-can {
+    color: rgb(167, 19, 19);
+}
+
+.fa-trash-can:hover {
+    opacity: 0.7;
+}
+
+
+/* Game section */
+
+#game {
+    height: 100vh;
+    padding: 40px 30px 0 30px;
+}
+
+#game-score-log-container {
+    height: 56%;
+    display: flex;
+    justify-content: space-between;
+}
+
+table.table-success {
+    min-width: 270px;
+    opacity: 0.85;
+    border-radius: 10px !important;
+}
+
+th, td {
+    text-align: center;
+}
+
+#game-log-box {
+    width: 480px;
+    background-color: rgb(210, 210, 210, 0.6);
+    border-radius: 15px;
+    padding: 8px 12px;
+    overflow: auto;
+}
+
+#game-log-box h3 {
+    margin-bottom: 20px;
+}
+
+#game-log-box p {
+    font-size: 14px;
+}
+
+#game-buttons-container {
+    height: 12%;
+    display: flex;
+    justify-content: center;
+}
+
+#game-buttons-box {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+#game-buttons-box button {
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 6px 24px;
+    opacity: 0.85;
+    border: none;
+    background-color: rgb(175, 175, 175);
+}
+
+#game-buttons-box button:hover {
+    background-color: gray;
+    color: white;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+#dice-container {
+    height: 24%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 40px;
+}
+
+.dice {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    background-color: white;
+}
+
+.dice-dot {
+    --top: 0%;
+    --left: 0%;
+
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+
+    /* Dot positioning */
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: var(--top);
+    left: var(--left);
+}
+
+#current-score-container {
+    height: 8%;
+    display: flex;
+    justify-content: center;
+}
+
+#current-score-container p {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.bordered {
+    border: 5px solid dimgray;
+}
+
+
+/* Winner section */
+
+#winner > div {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#winner-box div {
+    height: 90px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}
+
+@keyframes winner {
+    from {font-size: 80px;}
+    to {font-size: 90px;}
+}
+
+#winner-box h3 {
+    font-size: 150px;
+    font-weight: bold;
+    background: linear-gradient(to bottom right, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);
+    background-size: 400%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: gradient 8s linear infinite;
+}
+
+#winner-box h4 {
+    margin-top: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(102, 21, 21);
+    animation: winner 1s alternate infinite;
+}
