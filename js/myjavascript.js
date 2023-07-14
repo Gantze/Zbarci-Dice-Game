@@ -411,7 +411,7 @@ const game = {
 
         switch (true) {
             case action === 'zbarci':
-                message.textContent = `${this.currentPlayer} threw a Zbarci!`;
+                message.textContent = `${this.currentPlayer} threw a Zb\u00E2rci!`;
                 break;
             case action === 'threshold':
                 message.textContent = `${this.currentPlayer} entered the threshold`;
